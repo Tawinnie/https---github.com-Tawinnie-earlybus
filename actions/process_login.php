@@ -1,5 +1,5 @@
 <?php
-include("../controllers/general_controller.php");
+include("../controllers/customer_controller.php");
 
 //for login
 if(isset($_POST['submit2']))
@@ -13,7 +13,7 @@ if(isset($_POST['submit2']))
    
     if ($logresult==$password){
         //go to manage products if not proceed to homepage
-        header("Location: ../view/homepage.php");
+        header("Location: ../index.php");
        // echo "Logged in  successful!";
     }
     else
@@ -23,18 +23,18 @@ if(isset($_POST['submit2']))
 
 }
 
-session_start();
-//defining user role upon login to direct which page a user would go to
-if ($logresult["user_role"] == 1)
-{
-    header('Location: ../Admin/add_brand.php');
-    $_SESSION["verifyrole"] = 1;
+// session_start();
+// //defining user role upon login to direct which page a user would go to
+// if ($logresult["user_role"] == 1)
+// {
+//     header('Location: ../Admin/add_brand.php');
+//     $_SESSION["verifyrole"] = 1;
    
-} else{
+// } else{
 
-   $_SESSION["verifyrole"] = 0;
-    header('Location: ../view/homepage.php');
+//    $_SESSION["verifyrole"] = 0;
+//     header('Location: ../view/homepage.php');
 
-        }
+//         }
   
 ?>

@@ -1,6 +1,6 @@
 <?php 
 //when a customer clicks the register button
-include("../controllers/general_controller.php");
+include("../controllers/customer_controller.php");
 
 if (isset ($_POST['submit'])) {
     $fullname = $_POST['customer_name'];
@@ -18,7 +18,7 @@ if (isset ($_POST['submit'])) {
  $result = getnewcustomer($fullname,$email,$contact,$country,$city,$hashed_password,$user_role);
  if ($result) {
     //echo "Registration successful!";
-    header("Location: ../view/Login.php");
+    header("Location: ../view/login.php");
  }
  else 
     echo "Registration Unsuccessful!";
