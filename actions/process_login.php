@@ -7,7 +7,7 @@ if(isset($_POST['submit2']))
     $email=$_POST['mail'];
     $password=$_POST['pass'];
 
-    //encrypt password to matchthe one stored in the database
+    //encrypt password to match the one stored in the database
    $hash = base64_decode($password);
    $logresult= newlogin($email, $hash);
    
